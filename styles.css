@@ -537,8 +537,67 @@ details p {
   background: rgba(4, 5, 10, 0.5);
 }
 
+.platforms-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.platform-card {
+  position: relative;
+  padding: 28px 24px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.25s var(--ease), border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.platform-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(139, 92, 246, 0.35);
+  box-shadow: var(--shadow-glow);
+}
+
+.platform-card.featured {
+  border-color: rgba(139, 92, 246, 0.45);
+  background: linear-gradient(165deg, rgba(139, 92, 246, 0.14) 0%, var(--surface) 55%);
+}
+
+.platform-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(139, 92, 246, 0.25);
+  color: var(--accent-2);
+}
+
+.platform-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.platform-card .btn { margin-top: auto; width: 100%; }
+
+.steps-list {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: var(--muted);
+  line-height: 1.9;
+}
+
+.steps-list a { color: var(--accent-2); }
+
 @media (max-width: 900px) {
-  .hero-grid, .features-grid, .pricing-grid { grid-template-columns: 1fr; }
+  .hero-grid, .features-grid, .pricing-grid, .platforms-grid { grid-template-columns: 1fr; }
   .nav-links { display: none; }
   .price-card.featured { transform: none; }
   .hero { padding-top: 56px; }
