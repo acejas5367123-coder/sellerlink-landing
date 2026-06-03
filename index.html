@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SellerLink — чистые ссылки WB, Ozon и Я.Маркет за 1 клик</title>
-  <meta name="description" content="Утилита для селлеров: вырезает UTM и мусор из ссылок, оставляет артикул. Windows, Telegram-бот. Не аналитика — просто чистильщик." />
+  <title>SellerLink — чистые ссылки WB, Ozon и Я.Маркет</title>
+  <meta name="description" content="Утилита для селлеров: вырезает UTM и мусор из ссылок, оставляет артикул. Windows, Telegram-бот. Не аналитика." />
   <meta name="sellerlink-api" content="https://sellerlink.lucaink.ru" />
   <meta name="sellerlink-cabinet" content="https://sellerlink.lucaink.ru/app" />
   <meta name="sellerlink-price" content="300" />
@@ -15,17 +15,17 @@
   <meta name="sellerlink-payments-enabled" content="false" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="favicon.svg" />
-  <meta name="theme-color" content="#020308" />
+  <meta name="theme-color" content="#f3efe6" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="container header-row">
       <a class="logo" href="#top">
-        <img class="logo-img" src="favicon.svg" width="38" height="38" alt="" />
+        <img class="logo-img" src="favicon.svg" width="36" height="36" alt="" />
         <span>SellerLink</span>
       </a>
       <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Меню">
@@ -33,9 +33,9 @@
       </button>
       <nav class="nav-links" id="nav-menu">
         <a href="#scenes">Зачем</a>
-        <a href="#features">Функции</a>
+        <a href="#features">Внутри</a>
         <a href="#pricing">Цена</a>
-        <a href="#faq">Вопросы</a>
+        <a href="#faq">FAQ</a>
         <a href="https://sellerlink.lucaink.ru/app">Кабинет</a>
       </nav>
       <a class="btn btn-small" href="https://github.com/acejas5367123-coder/sellerlink-releases/releases/latest" target="_blank" rel="noopener">Скачать</a>
@@ -46,46 +46,45 @@
     <section class="hero container">
       <div class="hero-grid">
         <div class="hero-copy">
-          <span class="eyebrow">Утилита · не аналитика и не кабинет WB</span>
+          <p class="tag-line">Утилита · не MPStats · не кабинет WB</p>
           <h1>
-            Очисти ссылку<br />
-            <span class="title-gradient">от мусора за секунду</span>
+            <span class="strike">Аналитика и отчёты</span>
+            <span class="hit">Чистые ссылки за секунду</span>
           </h1>
           <p class="lead">
-            Длинный URL из рекламы, поиска или Excel — в артикул или короткую ссылку.
-            Без API Wildberries. Программа в трее Windows + бесплатный бот в Telegram.
+            Длинный URL из рекламы или Excel → артикул или короткая ссылка.
+            Без API. Windows в трее + бот в Telegram.
           </p>
-          <div class="pill-row">
-            <span class="pill">WB · Ozon · Я.Маркет</span>
-            <span class="pill pill-hot">Telegram Ads</span>
-            <span class="pill">Excel пачками</span>
+          <div class="chips">
+            <span class="chip">WB</span>
+            <span class="chip">Ozon</span>
+            <span class="chip">Я.Маркет</span>
+            <span class="chip chip-warn">Telegram Ads</span>
+            <span class="chip">Excel</span>
           </div>
           <div class="hero-cta">
-            <a class="btn" href="https://github.com/acejas5367123-coder/sellerlink-releases/releases/latest" target="_blank" rel="noopener">Скачать для Windows</a>
-            <a class="btn btn-ghost" href="https://t.me/seller_link_bot" target="_blank" rel="noopener">Попробовать в боте</a>
+            <a class="btn" href="https://github.com/acejas5367123-coder/sellerlink-releases/releases/latest" target="_blank" rel="noopener">Windows .exe</a>
+            <a class="btn btn-ghost" href="https://t.me/seller_link_bot" target="_blank" rel="noopener">Бот</a>
           </div>
           <p class="hero-kbd">
-            <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>U</kbd> в буфере · 3 дня Pro бесплатно
+            <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>U</kbd> · 3 дня Pro бесплатно
           </p>
         </div>
 
         <div class="hero-card" id="demo-card">
-          <div class="demo-toolbar">
-            <span class="demo-dot"></span>
-            <span class="demo-dot"></span>
-            <span class="demo-dot"></span>
-            <span class="demo-toolbar-title">sellerlink · demo</span>
-          </div>
-          <div class="demo-row bad" id="demo-before">
-            <span class="demo-label">Было · 280 символов</span>
-            <code id="demo-before-text">wildberries.ru/catalog/12345678/detail.aspx?targetUrl=GP&amp;size=98765432&amp;utm_source=telegram&amp;yclid=abc123…</code>
-          </div>
-          <button type="button" class="btn btn-small demo-clean-btn" id="demo-clean-btn">✨ Очистить</button>
-          <div class="demo-arrow" aria-hidden="true">↓</div>
-          <div class="demo-row good" id="demo-after">
-            <span class="demo-label">Стало</span>
-            <code id="demo-after-text">12345678</code>
-            <button type="button" class="demo-copy-btn hidden" id="demo-copy-btn">Скопировать</button>
+          <div class="demo-head">live · url stripper</div>
+          <div class="demo-body">
+            <div class="demo-row bad" id="demo-before">
+              <span class="demo-label">input · 280 chars</span>
+              <code id="demo-before-text">wildberries.ru/catalog/12345678/detail.aspx?targetUrl=GP&amp;size=98765432&amp;utm_source=telegram&amp;yclid=abc123…</code>
+            </div>
+            <button type="button" class="btn btn-small demo-clean-btn" id="demo-clean-btn">STRIP</button>
+            <div class="demo-arrow" aria-hidden="true">▼</div>
+            <div class="demo-row good" id="demo-after">
+              <span class="demo-label">output</span>
+              <code id="demo-after-text">12345678</code>
+              <button type="button" class="demo-copy-btn hidden" id="demo-copy-btn">COPY</button>
+            </div>
           </div>
         </div>
       </div>
@@ -93,72 +92,58 @@
 
     <section class="not-strip container">
       <div class="not-strip-inner">
-        <p class="not-strip-title">SellerLink — это не</p>
+        <p class="not-strip-title">Это не</p>
         <ul class="not-strip-list">
-          <li>аналитика и юнит-экономика</li>
-          <li>личный кабинет Wildberries</li>
-          <li>доступ по API к вашим продажам</li>
+          <li>аналитика</li>
+          <li>личный кабинет WB</li>
+          <li>API продаж</li>
         </ul>
         <p class="not-strip-yes">
-          Это <strong>чистильщик ссылок</strong> — друг Excel, MPStats и таргетолога, не конкурент.
+          <strong>Чистильщик ссылок</strong> — для Excel, рекламы и чатов с поставщиками.
         </p>
       </div>
     </section>
 
     <section id="scenes" class="section container">
       <div class="section-head">
-        <h2>Где это реально спасает</h2>
-        <p class="section-intro centered">Одна заноза — грязная ссылка. Решение — одно действие.</p>
+        <h2>Где нужно</h2>
+        <p class="section-intro">Одна проблема — грязный URL. Одно действие.</p>
       </div>
       <div class="scenes-grid">
         <article class="scene-card scene-hot">
-          <span class="scene-tag">Горячее</span>
-          <h3>Telegram Ads и реклама</h3>
+          <span class="scene-tag">Ads</span>
+          <h3>Telegram Ads и таргет</h3>
           <p>
-            Ссылка из браузера или кабинета WB часто тащит размер, цвет и UTM.
-            Трафик может уехать не на карточку, а на вариант SKU. Пропустите через SellerLink — отдайте таргетологу чистый ID.
+            Ссылка из WB тащит размер, цвет, UTM. Трафик уезжает не на карточку.
+            SellerLink → чистый ID для таргетолога.
           </p>
         </article>
         <article class="scene-card">
           <h3>Excel и выгрузки</h3>
-          <p>
-            Столбец из 500 длинных URL → столбец артикулов за минуту в Pro.
-            Перед загрузкой в любой сервис аналитики — без ручного вычищения.
-          </p>
+          <p>500 URL → столбец артикулов в Pro. Без ручного вычищения перед аналитикой.</p>
         </article>
         <article class="scene-card">
-          <h3>Чаты и поставщики</h3>
-          <p>
-            Короткая ссылка вместо полотна спецсимволов.
-            С телефона — кинули ссылку боту, получили артикул.
-          </p>
+          <h3>Чаты</h3>
+          <p>С телефона — ссылка боту, в ответ артикул. Без простыней в переписке.</p>
         </article>
       </div>
     </section>
 
     <section class="steps-section">
       <div class="container">
-        <div class="section-head">
-          <h2>Как это работает</h2>
-        </div>
+        <h2>Как</h2>
         <ol class="steps-list">
           <li>
-            <span class="step-num">1</span>
-            <div>
-              <strong>Скопировали</strong> длинную ссылку WB / Ozon / Я.Маркет
-            </div>
+            <span class="step-num">01</span>
+            <div><strong>Скопировали</strong> длинную ссылку</div>
           </li>
           <li>
-            <span class="step-num">2</span>
-            <div>
-              <strong>Hotkey</strong> или бот — мусор исчез, остаётся артикул или чистый URL
-            </div>
+            <span class="step-num">02</span>
+            <div><strong>Hotkey / бот</strong> — остался артикул</div>
           </li>
           <li>
-            <span class="step-num">3</span>
-            <div>
-              <strong>Вставили</strong> в рекламу, таблицу или чат — без сюрпризов
-            </div>
+            <span class="step-num">03</span>
+            <div><strong>Вставили</strong> в рекламу или таблицу</div>
           </li>
         </ol>
       </div>
@@ -168,63 +153,61 @@
       <div class="callout-box">
         <h2>Что покупаете</h2>
         <p>
-          <strong>Windows-приложение</strong> (.exe в трее) — основной инструмент: hotkey, пачки, автоочистка буфера.
-          <strong>Pro — 300 ₽ один раз</strong>, без подписки. Бот и сайт — бесплатные дополнения.
+          <strong>Windows .exe</strong> в трее — hotkey, пачки, автоочистка буфера.
+          <strong>Pro 300 ₽ разово</strong>. Бот и сайт — бесплатные дополнения.
         </p>
       </div>
     </section>
 
     <section id="features" class="section container">
-      <div class="section-head">
-        <h2>Внутри программы</h2>
-      </div>
+      <h2>Внутри программы</h2>
       <div class="features-grid">
         <article class="feature-card">
-          <div class="feature-icon" aria-hidden="true">⌨</div>
-          <h3>Один клик</h3>
-          <p>Сочетание клавиш — и в буфере уже чистая ссылка или артикул.</p>
+          <div class="feature-num">01</div>
+          <h3>Hotkey</h3>
+          <p>Чистая ссылка или артикул в буфере за одно нажатие.</p>
         </article>
         <article class="feature-card">
-          <div class="feature-icon" aria-hidden="true">☰</div>
-          <h3>Пачка из Excel</h3>
-          <p>Вставили столбец — получили артикулы без дублей. Экспорт обратно.</p>
+          <div class="feature-num">02</div>
+          <h3>Пачка</h3>
+          <p>Столбец из Excel → артикулы без дублей.</p>
         </article>
         <article class="feature-card">
-          <div class="feature-icon" aria-hidden="true">⚡</div>
-          <h3>Автоочистка Pro</h3>
-          <p>Скопировали — SellerLink сам подменил ссылку в буфере.</p>
+          <div class="feature-num">03</div>
+          <h3>Авто Pro</h3>
+          <p>Скопировали — буфер подменился сам.</p>
         </article>
         <article class="feature-card">
-          <div class="feature-icon" aria-hidden="true">⇄</div>
-          <h3>Артикул ↔ URL</h3>
-          <p>Номер товара → ссылки на три маркетплейса. Или наоборот.</p>
+          <div class="feature-num">04</div>
+          <h3>ID ↔ URL</h3>
+          <p>Артикул на три маркетплейса и обратно.</p>
         </article>
       </div>
     </section>
 
     <section id="platforms" class="section container">
-      <div class="section-head">
-        <h2>Без установки — тоже можно</h2>
-        <p class="section-intro centered">Для ежедневной работы лучше Windows. Для пары ссылок с телефона:</p>
+      <div class="section-head centered">
+        <h2>Каналы</h2>
+        <p class="section-intro centered">Для работы — Windows. Для пары ссылок — бот или сайт.</p>
       </div>
       <div class="platforms-grid">
         <article class="platform-card featured">
-          <div class="platform-icon">💻</div>
+          <span class="platform-label">Основной</span>
           <h3>Windows</h3>
-          <p>Tray, пакеты, история, Pro. Сюда приходят чаще всего.</p>
-          <a class="btn" href="https://github.com/acejas5367123-coder/sellerlink-releases/releases/latest" target="_blank" rel="noopener">Скачать .exe</a>
+          <p>Tray, пакеты, история, Pro.</p>
+          <a class="btn" href="https://github.com/acejas5367123-coder/sellerlink-releases/releases/latest" target="_blank" rel="noopener">Скачать</a>
         </article>
         <article class="platform-card">
-          <div class="platform-icon">✈</div>
-          <h3>Telegram-бот</h3>
-          <p>Ссылка в чат → артикул в ответ. Бесплатно, до 10 штук.</p>
+          <span class="platform-label">Мобильный</span>
+          <h3>Telegram</h3>
+          <p>До 10 ссылок бесплатно.</p>
           <a class="btn btn-ghost" href="https://t.me/seller_link_bot" target="_blank" rel="noopener">@seller_link_bot</a>
         </article>
         <article class="platform-card">
-          <div class="platform-icon">🌐</div>
+          <span class="platform-label">Браузер</span>
           <h3>Сайт</h3>
-          <p>То же в браузере. Вход по email с любого ПК.</p>
-          <a class="btn btn-ghost" href="https://sellerlink.lucaink.ru/app">Личный кабинет</a>
+          <p>Вход по email, тот же аккаунт.</p>
+          <a class="btn btn-ghost btn-blue" href="https://sellerlink.lucaink.ru/app">Кабинет</a>
         </article>
       </div>
     </section>
@@ -232,41 +215,38 @@
     <section id="pricing" class="section pricing-section">
       <div class="container">
         <div class="section-head centered">
-          <h2>Цена без подписки</h2>
-          <p class="section-intro centered">Микро-утилита — микро-чек. Один раз и навсегда.</p>
+          <h2>Тариф</h2>
+          <p class="section-intro centered">Без подписки.</p>
         </div>
         <div class="pricing-grid">
           <article class="price-card">
-            <h3>Попробовать</h3>
-            <div class="price">0 ₽</div>
-            <p>3 дня Pro в программе</p>
+            <h3>Trial</h3>
+            <div class="price">0₽</div>
             <ul>
+              <li>3 дня Pro</li>
               <li>Автоочистка</li>
-              <li>Пакеты ссылок</li>
-              <li>Без карты</li>
+              <li>Пачки</li>
             </ul>
             <a class="btn btn-ghost" href="https://github.com/acejas5367123-coder/sellerlink-releases/releases/latest" target="_blank" rel="noopener">Скачать</a>
           </article>
           <article class="price-card featured">
             <span class="popular">Разово</span>
-            <h3>Pro навсегда</h3>
-            <div class="price">300 ₽</div>
-            <p>Ключ на email после оплаты</p>
+            <h3>Pro</h3>
+            <div class="price">300₽</div>
             <ul>
-              <li>Без лимита ссылок</li>
-              <li>Автоочистка буфера</li>
-              <li>Обновления .exe</li>
+              <li>Без лимита</li>
+              <li>Авто буфер</li>
+              <li>Обновления</li>
             </ul>
-            <a class="btn btn-ghost" href="#buy">Купить Pro</a>
+            <a class="btn" href="#buy">Купить</a>
           </article>
           <article class="price-card">
-            <h3>После trial</h3>
-            <div class="price">0 ₽</div>
-            <p>База остаётся</p>
+            <h3>Free</h3>
+            <div class="price">0₽</div>
             <ul>
-              <li>1 ссылка за раз</li>
+              <li>1 ссылка</li>
               <li>Hotkey</li>
-              <li>Бот — 10 / мес</li>
+              <li>Бот 10/мес</li>
             </ul>
           </article>
         </div>
@@ -277,79 +257,74 @@
       <div class="buy-box">
         <h2>Купить Pro</h2>
         <div id="pay-paused" class="pay-paused">
-          <p class="pay-paused-title">Оплата пока недоступна</p>
-          <p class="pay-paused-text">Подключаем онлайн-кассу. Как будет готово — откроем приём на сайте.</p>
-          <p class="pay-paused-text">Срочно нужен Pro? <a href="mailto:acejas536712@mail.ru">acejas536712@mail.ru</a> · <a href="https://t.me/seller_link_bot" target="_blank" rel="noopener">Telegram</a></p>
+          <p class="pay-paused-title">Оплата закрыта</p>
+          <p class="pay-paused-text">Подключаем кассу. Напишите: <a href="mailto:acejas536712@mail.ru">acejas536712@mail.ru</a> · <a href="https://t.me/seller_link_bot" target="_blank" rel="noopener">Telegram</a></p>
         </div>
 
         <form id="pay-form" class="pay-form hidden" hidden>
-          <label class="pay-label" for="pay-email">Email (на него уйдёт ключ)</label>
+          <label class="pay-label" for="pay-email">Email</label>
           <input id="pay-email" class="pay-input" type="email" required placeholder="you@mail.ru" autocomplete="email" />
 
           <div id="pay-steps" class="pay-steps hidden">
             <div class="pay-step">
               <span class="pay-step-num">1</span>
               <div>
-                <strong>Переведите <span id="pay-price-label">300</span> ₽ по СБП</strong>
+                <strong>СБП <span id="pay-price-label">300</span> ₽</strong>
                 <p id="pay-sbp-hint" class="pay-hint"></p>
                 <div class="pay-step-actions">
-                  <a id="pay-sbp-link" class="btn btn-small hidden" href="#" target="_blank" rel="noopener noreferrer">Открыть СБП</a>
-                  <button type="button" id="pay-copy-id" class="btn btn-ghost btn-small hidden">Скопировать номер заявки</button>
+                  <a id="pay-sbp-link" class="btn btn-small hidden" href="#" target="_blank" rel="noopener noreferrer">СБП</a>
+                  <button type="button" id="pay-copy-id" class="btn btn-ghost btn-small hidden">Копировать ID</button>
                 </div>
               </div>
             </div>
             <div class="pay-step">
               <span class="pay-step-num">2</span>
               <div>
-                <strong>Скрин чека в бота</strong>
-                <p class="pay-hint">Кнопка «Отправить чек» внизу чата</p>
+                <strong>Чек в бота</strong>
                 <a id="pay-telegram-link" class="btn btn-small" href="https://t.me/seller_link_bot?start=buy" target="_blank" rel="noopener noreferrer">Telegram</a>
               </div>
             </div>
             <div class="pay-step">
               <span class="pay-step-num">3</span>
-              <div>
-                <strong>Ключ в программе</strong>
-                <p class="pay-hint">Настройки → Лицензия Pro</p>
-              </div>
+              <div><strong>Ключ в программе</strong></div>
             </div>
           </div>
 
           <label class="pay-consent" for="pay-consent">
             <input type="checkbox" id="pay-consent" name="consent" required />
-            <span>Оплачивая, принимаю <a href="offer.html" target="_blank" rel="noopener">оферту</a>, <a href="privacy.html" target="_blank" rel="noopener">конфиденциальность</a> и <a href="refund.html" target="_blank" rel="noopener">возврат</a>.</span>
+            <span>Принимаю <a href="offer.html" target="_blank" rel="noopener">оферту</a>, <a href="privacy.html" target="_blank" rel="noopener">privacy</a>, <a href="refund.html" target="_blank" rel="noopener">возврат</a>.</span>
           </label>
 
-          <button id="pay-btn" class="btn pay-btn" type="submit">Продолжить — 300 ₽</button>
+          <button id="pay-btn" class="btn pay-btn" type="submit">300 ₽</button>
           <p id="pay-message" class="pay-message" aria-live="polite"></p>
         </form>
 
-        <p class="pay-note hidden" id="pay-note">Оплата картой пока не подключена.</p>
+        <p class="pay-note hidden" id="pay-note">Карта не подключена.</p>
       </div>
     </section>
 
     <section id="faq" class="section container narrow">
-      <h2>Вопросы</h2>
+      <h2>FAQ</h2>
       <div class="faq-list">
         <details>
-          <summary>Это MPStats или аналитика WB?</summary>
-          <p>Нет. SellerLink только чистит ссылки и вытаскивает артикулы. К аналитике не подключается.</p>
+          <summary>Это MPStats?</summary>
+          <p>Нет. Только ссылки и артикулы.</p>
         </details>
         <details>
-          <summary>Нужны API-ключи Wildberries?</summary>
-          <p>Нет. Вы вставляете ссылку — мы парсим URL локально (в программе) или на сервере (бот/сайт).</p>
+          <summary>Нужен API WB?</summary>
+          <p>Нет. Парсим URL локально или на сервере.</p>
         </details>
         <details>
-          <summary>Зачем чистить, если ссылка и так открывается?</summary>
-          <p>Откроется — но часто на конкретный размер/цвет или с лишними метками. Для рекламы и таблиц нужен предсказуемый артикул.</p>
+          <summary>Зачем чистить, если открывается?</summary>
+          <p>Часто открывается размер/цвет с UTM. Для рекламы нужен стабильный ID.</p>
         </details>
         <details>
-          <summary>Чем бот отличается от программы?</summary>
-          <p>Бот — 1–2 ссылки с телефона. Программа — hotkey, пачки Excel, автоочистка буфера.</p>
+          <summary>Бот vs программа?</summary>
+          <p>Бот — 1–2 ссылки с телефона. Программа — hotkey и Excel.</p>
         </details>
         <details>
-          <summary>Интернет нужен?</summary>
-          <p>Windows-чистка работает офлайн. Бот и сайт — нужен интернет.</p>
+          <summary>Офлайн?</summary>
+          <p>Windows — да. Бот и сайт — интернет.</p>
         </details>
       </div>
     </section>
@@ -359,7 +334,7 @@
     <div class="container footer-grid">
       <div class="footer-block">
         <strong>SellerLink</strong>
-        <p>Чистильщик ссылок · WB, Ozon, Я.Маркет</p>
+        <p>Strip URLs · WB · Ozon · Я.Маркет</p>
         <p class="footer-legal-links">
           <a href="offer.html">Оферта</a>
           <a href="privacy.html">Конфиденциальность</a>
@@ -377,7 +352,7 @@
       <div class="footer-block">
         <strong>Реквизиты</strong>
         <p>
-          Самозанятый Савельев Даниил Владимирович<br />
+          Савельев Даниил Владимирович<br />
           ИНН 544602265280
         </p>
       </div>

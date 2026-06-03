@@ -238,7 +238,7 @@ if (demoCleanBtn && demoCard) {
     demoCard.classList.add('demo-done');
     if (demoAfterText) demoAfterText.textContent = CLEAN_RESULT;
     if (demoCopyBtn) demoCopyBtn.classList.remove('hidden');
-    demoCleanBtn.textContent = '✓ Готово';
+    demoCleanBtn.textContent = 'DONE';
     demoCleanBtn.disabled = true;
   });
 }
@@ -249,7 +249,7 @@ if (demoCopyBtn) {
       await navigator.clipboard.writeText(CLEAN_RESULT);
       demoCopyBtn.textContent = 'Скопировано!';
       setTimeout(() => {
-        demoCopyBtn.textContent = 'Скопировать';
+        demoCopyBtn.textContent = 'COPY';
       }, 2000);
     } catch {
       demoCopyBtn.textContent = CLEAN_RESULT;
@@ -281,7 +281,7 @@ const DEMO_RESULT = '12345678';
 if (demoBtn && demoCard) {
   demoBtn.addEventListener('click', () => {
     demoCard.classList.add('demo-done');
-    demoBtn.textContent = '✓ Готово';
+    demoBtn.textContent = 'DONE';
     demoBtn.disabled = true;
     if (demoCopyBtn) demoCopyBtn.classList.remove('hidden');
   });
@@ -293,7 +293,7 @@ if (demoCopyBtn && demoAfterText) {
       await navigator.clipboard.writeText(DEMO_RESULT);
       demoCopyBtn.textContent = 'Скопировано!';
       setTimeout(() => {
-        demoCopyBtn.textContent = 'Скопировать';
+        demoCopyBtn.textContent = 'COPY';
       }, 2000);
     } catch {
       demoCopyBtn.textContent = DEMO_RESULT;
