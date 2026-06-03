@@ -63,7 +63,11 @@ async function createPayIntent(email) {
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener('click', (event) => {
     const id = link.getAttribute('href');
-    if (!id || id === '#') return;
+    if (!id || id === '#') {
+      event.preventDefault();
+      return;
+    }
+    if (!id.startsWith('#')) return;
     const target = document.querySelector(id);
     if (!target) return;
     event.preventDefault();
@@ -90,6 +94,26 @@ function setPayMessage(text, type = '') {
   payMessage.className = `pay-message ${type}`.trim();
 }
 
+function applyPayLinks(intent, cfg) {
+  const sbpUrl = intent.sbp?.url || cfg.sbp?.url;
+  if (paySbpLink) {
+    if (sbpUrl) {
+      paySbpLink.href = sbpUrl;
+      paySbpLink.classList.remove('hidden');
+    } else {
+      paySbpLink.href = '#';
+      paySbpLink.classList.add('hidden');
+    }
+  }
+
+  const telegramUrl =
+    intent.telegramUrl ||
+    (cfg.telegram?.username ? `https://t.me/${cfg.telegram.username}?start=buy` : cfg.telegram?.url);
+  if (payTelegramLink && telegramUrl) {
+    payTelegramLink.href = telegramUrl;
+  }
+}
+
 function showPaySteps(intent, cfg) {
   if (!paySteps) return;
   paySteps.classList.remove('hidden');
@@ -99,16 +123,11 @@ function showPaySteps(intent, cfg) {
   if (payPriceLabel) payPriceLabel.textContent = price;
   if (payBtn) payBtn.textContent = 'Готово — жду ключ на email';
 
+  applyPayLinks(intent, cfg);
+
   const sbpParts = [];
   if (intent.sbp?.url || cfg.sbp?.url) {
-    const url = intent.sbp?.url || cfg.sbp?.url;
     sbpParts.push('Перейдите по ссылке СБП или отсканируйте QR в приложении банка.');
-    if (paySbpLink) {
-      paySbpLink.href = url;
-      paySbpLink.classList.remove('hidden');
-    }
-  } else {
-    paySbpLink?.classList.add('hidden');
   }
 
   const phone = intent.sbp?.phone || cfg.sbp?.phone;
@@ -119,10 +138,6 @@ function showPaySteps(intent, cfg) {
   else sbpParts.push('В боте введите тот же email, что указали выше.');
 
   if (paySbpHint) paySbpHint.textContent = sbpParts.join(' · ');
-
-  if (payTelegramLink && intent.telegramUrl) {
-    payTelegramLink.href = intent.telegramUrl;
-  }
 
   if (payCopyId) {
     if (intent.orderId) {
@@ -182,4 +197,5 @@ fetchPayConfig().then((cfg) => {
       el.textContent = `Продолжить — ${price} ₽`;
     }
   });
+  applyPayLinks({ sbp: cfg.sbp, telegramUrl: null }, cfg);
 });
