@@ -5,15 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SellerLink — чистые ссылки для селлеров WB, Ozon, Яндекс.Маркет</title>
   <meta name="description" content="Tray-утилита для Windows: убирает UTM из ссылок маркетплейсов одной горячей клавишей." />
-  <!-- URL бэкенда с ЮKassa (если лендинг на GitHub Pages). Пример: https://api.yourdomain.ru -->
   <meta name="sellerlink-api" content="" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="container header-row">
       <a class="logo" href="#">
-        <span class="logo-mark"></span>
+        <span class="logo-mark" aria-hidden="true"></span>
         <span>SellerLink</span>
       </a>
       <nav class="nav-links">
@@ -29,7 +31,7 @@
     <section class="hero container">
       <div class="hero-grid">
         <div>
-          <span class="eyebrow">Для селлеров Wildberries · Ozon · Яндекс.Маркет</span>
+          <span class="eyebrow">Wildberries · Ozon · Яндекс.Маркет</span>
           <h1>Чистые ссылки<br />за одну горячую клавишу</h1>
           <p class="lead">
             SellerLink живёт в трее Windows, убирает UTM-мусор и вытаскивает артикул.
@@ -57,87 +59,96 @@
 
     <section id="features" class="section container">
       <h2>Всё, что нужно селлеру</h2>
+      <p class="section-intro">Tray-утилита, batch-режим, история и экспорт — всё в одном окне, без облака.</p>
       <div class="features-grid">
         <article class="feature-card">
+          <div class="feature-icon" aria-hidden="true">⌨</div>
           <h3>Tray + hotkey</h3>
           <p>Работает поверх Excel, браузера и аналитики. Скопировал — нажал — вставил.</p>
         </article>
         <article class="feature-card">
+          <div class="feature-icon" aria-hidden="true">☰</div>
           <h3>Массовая обработка</h3>
-          <p>Сотни ссылок списком, удаление дубликатов, экспорт TXT и CSV.</p>
+          <p>Сотни ссылок списком, удаление дубликатов, экспорт TXT и TSV.</p>
         </article>
         <article class="feature-card">
+          <div class="feature-icon" aria-hidden="true">⚡</div>
           <h3>Автоочистка Pro</h3>
           <p>Копируете ссылку — SellerLink сам подменяет её в буфере на чистую.</p>
         </article>
         <article class="feature-card">
+          <div class="feature-icon" aria-hidden="true">📊</div>
           <h3>История + Excel</h3>
           <p>Экспорт дня в TSV — вставка в таблицу одним Ctrl+V.</p>
-        </article>
-        <article class="feature-card">
-          <h3>Chrome + Telegram</h3>
-          <p>Расширение для браузера и бот — артикул в один клик / одно сообщение.</p>
         </article>
       </div>
     </section>
 
     <section class="section container narrow">
       <h2>Экосистема SellerLink</h2>
+      <p class="section-intro">Desktop, расширение Chrome и Telegram-бот — один стиль работы с артикулами.</p>
       <div class="features-grid" style="grid-template-columns:1fr 1fr">
         <article class="feature-card">
-          <h3>🖥 Windows-приложение</h3>
+          <div class="feature-icon" aria-hidden="true">🖥</div>
+          <h3>Windows-приложение</h3>
           <p>Tray, hotkey, batch, маппер артикулов, reverse URL.</p>
         </article>
         <article class="feature-card">
-          <h3>🌐 Chrome-расширение</h3>
+          <div class="feature-icon" aria-hidden="true">🌐</div>
+          <h3>Chrome-расширение</h3>
           <p>Поставляется вместе с Pro — инструкция в приложении после установки.</p>
         </article>
         <article class="feature-card">
-          <h3>✈ Telegram-бот</h3>
+          <div class="feature-icon" aria-hidden="true">✈</div>
+          <h3>Telegram-бот</h3>
           <p>Пришлите ссылку — получите артикул. Команды /batch и /reverse.</p>
         </article>
         <article class="feature-card">
-          <h3>⇄ Маппер SKU</h3>
+          <div class="feature-icon" aria-hidden="true">⇄</div>
+          <h3>Маппер SKU</h3>
           <p>Связка внутреннего артикула с WB / Ozon / Яндекс.Маркет.</p>
         </article>
       </div>
     </section>
 
     <section id="pricing" class="section pricing-section">
-      <div class="container pricing-grid">
-        <article class="price-card">
-          <h3>Trial</h3>
-          <div class="price">0 ₽</div>
-          <p>7 дней, все Pro-функции</p>
-          <ul>
-            <li>Автоочистка</li>
-            <li>Массовая обработка</li>
-            <li>Экспорт CSV</li>
-          </ul>
-          <a class="btn btn-ghost" href="https://github.com/acejas5367123-coder/sellerlink-releases/releases/latest" target="_blank" rel="noopener">Скачать .exe</a>
-        </article>
-        <article class="price-card featured">
-          <span class="popular">Рекомендуем</span>
-          <h3>Pro навсегда</h3>
-          <div class="price">500 ₽</div>
-          <p>Разовая оплата, без подписки</p>
-          <ul>
-            <li>Безлимит ссылок</li>
-            <li>Автоочистка при копировании</li>
-            <li>Обновления 2026 года</li>
-          </ul>
-          <a class="btn" href="#buy">Купить через ЮKassa</a>
-        </article>
-        <article class="price-card">
-          <h3>Free</h3>
-          <div class="price">0 ₽</div>
-          <p>После trial</p>
-          <ul>
-            <li>1 ссылка за раз</li>
-            <li>Горячая клавиша</li>
-            <li>Без автоочистки</li>
-          </ul>
-        </article>
+      <div class="container">
+        <h2 style="text-align:center;margin-bottom:40px">Простая цена</h2>
+        <div class="pricing-grid">
+          <article class="price-card">
+            <h3>Trial</h3>
+            <div class="price">0 ₽</div>
+            <p>7 дней, все Pro-функции</p>
+            <ul>
+              <li>Автоочистка</li>
+              <li>Массовая обработка</li>
+              <li>Экспорт TSV</li>
+            </ul>
+            <a class="btn btn-ghost" href="https://github.com/acejas5367123-coder/sellerlink-releases/releases/latest" target="_blank" rel="noopener">Скачать .exe</a>
+          </article>
+          <article class="price-card featured">
+            <span class="popular">Рекомендуем</span>
+            <h3>Pro навсегда</h3>
+            <div class="price">500 ₽</div>
+            <p>Разовая оплата, без подписки</p>
+            <ul>
+              <li>Безлимит ссылок</li>
+              <li>Автоочистка при копировании</li>
+              <li>Обновления 2026 года</li>
+            </ul>
+            <a class="btn" href="#buy">Купить через ЮKassa</a>
+          </article>
+          <article class="price-card">
+            <h3>Free</h3>
+            <div class="price">0 ₽</div>
+            <p>После trial</p>
+            <ul>
+              <li>1 ссылка за раз</li>
+              <li>Горячая клавиша</li>
+              <li>Без автоочистки</li>
+            </ul>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -159,18 +170,20 @@
 
     <section id="faq" class="section container narrow">
       <h2>FAQ</h2>
-      <details>
-        <summary>Нужен интернет?</summary>
-        <p>Нет. SellerLink работает полностью офлайн на вашем компьютере.</p>
-      </details>
-      <details>
-        <summary>Как получить ключ после оплаты?</summary>
-        <p>На email придёт ключ формата XXXX-XXXX-XXXX-XXXX. Введите его в настройках приложения.</p>
-      </details>
-      <details>
-        <summary>Free и Pro — в чём разница?</summary>
-        <p>Free обрабатывает одну ссылку за раз. Pro добавляет автоочистку, batch и экспорт без ограничений.</p>
-      </details>
+      <div class="faq-list">
+        <details>
+          <summary>Нужен интернет?</summary>
+          <p>Нет. SellerLink работает полностью офлайн на вашем компьютере.</p>
+        </details>
+        <details>
+          <summary>Как получить ключ после оплаты?</summary>
+          <p>На email придёт ключ формата XXXX-XXXX-XXXX-XXXX. Введите его в настройках приложения.</p>
+        </details>
+        <details>
+          <summary>Free и Pro — в чём разница?</summary>
+          <p>Free обрабатывает одну ссылку за раз. Pro добавляет автоочистку, batch и экспорт без ограничений.</p>
+        </details>
+      </div>
     </section>
   </main>
 
