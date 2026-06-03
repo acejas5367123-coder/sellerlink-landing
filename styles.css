@@ -77,26 +77,14 @@ body::before {
   letter-spacing: -0.02em;
 }
 
-.logo-mark {
+.logo-img {
   width: 38px;
   height: 38px;
   border-radius: 12px;
-  background: linear-gradient(145deg, #a78bfa 0%, #6366f1 48%, #4f46e5 100%);
-  box-shadow: 0 10px 28px var(--accent-glow), inset 0 1px 0 rgba(255, 255, 255, 0.25);
-  position: relative;
   flex-shrink: 0;
+  box-shadow: 0 10px 28px var(--accent-glow);
+  display: block;
 }
-
-.logo-mark::before,
-.logo-mark::after {
-  content: "";
-  position: absolute;
-  background: #fff;
-  border-radius: 999px;
-}
-
-.logo-mark::before { width: 14px; height: 3px; top: 17px; left: 12px; }
-.logo-mark::after { width: 3px; height: 14px; top: 12px; left: 17px; }
 
 .nav-links { display: flex; gap: 28px; }
 
