@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Оплата прошла — SellerLink</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="success-page">
+    <div class="success-card">
+      <div class="success-icon">✓</div>
+      <h1>Спасибо за покупку!</h1>
+      <p id="success-text">Ключ SellerLink Pro отправлен на ваш email. Проверьте входящие и папку «Спам».</p>
+      <p id="success-email" class="success-email"></p>
+      <ol class="success-steps">
+        <li>Откройте SellerLink → <strong>Настройки</strong></li>
+        <li>Введите email и ключ из письма</li>
+        <li>Нажмите <strong>Активировать Pro</strong></li>
+      </ol>
+      <a class="btn" href="/">На главную</a>
+    </div>
+  </main>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const email = params.get('email');
+    if (email) {
+      document.getElementById('success-email').textContent = `Email: ${email}`;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SellerLink — чистые ссылки для селлеров WB, Ozon, Яндекс.Маркет</title>
+  <meta name="description" content="Tray-утилита для Windows: убирает UTM из ссылок маркетплейсов одной горячей клавишей." />
+  <!-- URL бэкенда с ЮKassa (если лендинг на GitHub Pages). Пример: https://api.yourdomain.ru -->
+  <meta name="sellerlink-api" content="" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="logo" href="#">
+        <span class="logo-mark"></span>
+        <span>SellerLink</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#features">Возможности</a>
+        <a href="#pricing">Цена</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a class="btn btn-small" href="https://github.com/acejas5367123-coder/sellerlink-releases/releases/latest" target="_blank" rel="noopener">Скачать trial</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">Для селлеров Wildberries · Ozon · Яндекс.Маркет</span>
+          <h1>Чистые ссылки<br />за одну горячую клавишу</h1>
+          <p class="lead">
+            SellerLink живёт в трее Windows, убирает UTM-мусор и вытаскивает артикул.
+            Без браузерных расширений и онлайн-сервисов.
+          </p>
+          <div class="hero-cta">
+            <a class="btn" href="https://github.com/acejas5367123-coder/sellerlink-releases/releases/latest" target="_blank" rel="noopener">Скачать для Windows</a>
+            <a class="btn btn-ghost" href="#features">Как это работает</a>
+          </div>
+          <div class="hero-kbd">Горячая клавиша: <kbd>Ctrl + Shift + U</kbd></div>
+        </div>
+        <div class="hero-card">
+          <div class="demo-row bad">
+            <span class="demo-label">Было</span>
+            <code>wildberries.ru/catalog/12345678/detail.aspx?utm_source=telegram&yclid=abc…</code>
+          </div>
+          <div class="demo-arrow">↓</div>
+          <div class="demo-row good">
+            <span class="demo-label">Стало</span>
+            <code>12345678</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="section container">
+      <h2>Всё, что нужно селлеру</h2>
+      <div class="features-grid">
+        <article class="feature-card">
+          <h3>Tray + hotkey</h3>
+          <p>Работает поверх Excel, браузера и аналитики. Скопировал — нажал — вставил.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Массовая обработка</h3>
+          <p>Сотни ссылок списком, удаление дубликатов, экспорт TXT и CSV.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Автоочистка Pro</h3>
+          <p>Копируете ссылку — SellerLink сам подменяет её в буфере на чистую.</p>
+        </article>
+        <article class="feature-card">
+          <h3>История + Excel</h3>
+          <p>Экспорт дня в TSV — вставка в таблицу одним Ctrl+V.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Chrome + Telegram</h3>
+          <p>Расширение для браузера и бот — артикул в один клик / одно сообщение.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container narrow">
+      <h2>Экосистема SellerLink</h2>
+      <div class="features-grid" style="grid-template-columns:1fr 1fr">
+        <article class="feature-card">
+          <h3>🖥 Windows-приложение</h3>
+          <p>Tray, hotkey, batch, маппер артикулов, reverse URL.</p>
+        </article>
+        <article class="feature-card">
+          <h3>🌐 Chrome-расширение</h3>
+          <p>Поставляется вместе с Pro — инструкция в приложении после установки.</p>
+        </article>
+        <article class="feature-card">
+          <h3>✈ Telegram-бот</h3>
+          <p>Пришлите ссылку — получите артикул. Команды /batch и /reverse.</p>
+        </article>
+        <article class="feature-card">
+          <h3>⇄ Маппер SKU</h3>
+          <p>Связка внутреннего артикула с WB / Ozon / Яндекс.Маркет.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="pricing" class="section pricing-section">
+      <div class="container pricing-grid">
+        <article class="price-card">
+          <h3>Trial</h3>
+          <div class="price">0 ₽</div>
+          <p>7 дней, все Pro-функции</p>
+          <ul>
+            <li>Автоочистка</li>
+            <li>Массовая обработка</li>
+            <li>Экспорт CSV</li>
+          </ul>
+          <a class="btn btn-ghost" href="https://github.com/acejas5367123-coder/sellerlink-releases/releases/latest" target="_blank" rel="noopener">Скачать .exe</a>
+        </article>
+        <article class="price-card featured">
+          <span class="popular">Рекомендуем</span>
+          <h3>Pro навсегда</h3>
+          <div class="price">500 ₽</div>
+          <p>Разовая оплата, без подписки</p>
+          <ul>
+            <li>Безлимит ссылок</li>
+            <li>Автоочистка при копировании</li>
+            <li>Обновления 2026 года</li>
+          </ul>
+          <a class="btn" href="#buy">Купить через ЮKassa</a>
+        </article>
+        <article class="price-card">
+          <h3>Free</h3>
+          <div class="price">0 ₽</div>
+          <p>После trial</p>
+          <ul>
+            <li>1 ссылка за раз</li>
+            <li>Горячая клавиша</li>
+            <li>Без автоочистки</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="buy" class="section container narrow">
+      <div class="buy-box">
+        <h2>Оплата через ЮKassa</h2>
+        <p>Карта, СБП, Apple Pay / Google Pay. После оплаты ключ приходит на email автоматически.</p>
+
+        <form id="pay-form" class="pay-form">
+          <label class="pay-label" for="pay-email">Email для ключа Pro</label>
+          <input id="pay-email" class="pay-input" type="email" required placeholder="you@mail.ru" autocomplete="email" />
+          <button id="pay-btn" class="btn pay-btn" type="submit">Оплатить 500 ₽</button>
+          <p id="pay-message" class="pay-message" aria-live="polite"></p>
+        </form>
+
+        <p class="pay-note">Нажимая «Оплатить», вы перейдёте на защищённую страницу ЮKassa.</p>
+      </div>
+    </section>
+
+    <section id="faq" class="section container narrow">
+      <h2>FAQ</h2>
+      <details>
+        <summary>Нужен интернет?</summary>
+        <p>Нет. SellerLink работает полностью офлайн на вашем компьютере.</p>
+      </details>
+      <details>
+        <summary>Как получить ключ после оплаты?</summary>
+        <p>На email придёт ключ формата XXXX-XXXX-XXXX-XXXX. Введите его в настройках приложения.</p>
+      </details>
+      <details>
+        <summary>Free и Pro — в чём разница?</summary>
+        <p>Free обрабатывает одну ссылку за раз. Pro добавляет автоочистку, batch и экспорт без ограничений.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <span>SellerLink · Windows 10/11</span>
+      <span>support@example.com · самозанятый / ИП</span>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
