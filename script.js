@@ -110,7 +110,7 @@ function setPaymentsUi(enabled) {
       el.textContent = 'Оплата скоро';
     } else {
       el.classList.remove('btn-ghost');
-      el.textContent = 'Купить Pro';
+      el.textContent = 'Доступ Pro';
     }
   });
 }
