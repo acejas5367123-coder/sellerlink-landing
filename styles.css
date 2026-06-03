@@ -529,7 +529,12 @@ details p {
 .footer-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px 32px;
+  gap: 32px 24px;
+  text-align: center;
+  justify-items: center;
+  align-items: start;
+  max-width: 960px;
+  margin: 0 auto;
 }
 
 .footer-block strong {
@@ -556,6 +561,7 @@ details p {
 .footer-legal-links {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 8px 16px;
   margin-top: 8px;
 }
