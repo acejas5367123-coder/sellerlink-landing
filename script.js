@@ -8,7 +8,7 @@ function staticPayConfig() {
   const telegram = meta('sellerlink-telegram').replace(/^@/, '');
   return {
     ok: true,
-    price: meta('sellerlink-price') || '500',
+    price: meta('sellerlink-price') || '300',
     currency: 'RUB',
     sbp: {
       url: meta('sellerlink-sbp-url') || null,
@@ -95,7 +95,7 @@ function showPaySteps(intent, cfg) {
   paySteps.classList.remove('hidden');
   currentOrderId = intent.orderId;
 
-  const price = intent.price || cfg.price || '500';
+  const price = intent.price || cfg.price || '300';
   if (payPriceLabel) payPriceLabel.textContent = price;
   if (payBtn) payBtn.textContent = 'Готово — жду ключ на email';
 
@@ -159,7 +159,7 @@ if (payForm) {
 
     payBtn.disabled = true;
     const cfg = await fetchPayConfig();
-    const price = cfg.price || '500';
+    const price = cfg.price || '300';
     payBtn.textContent = 'Создаём заявку…';
     setPayMessage('');
 
@@ -176,7 +176,7 @@ if (payForm) {
 }
 
 fetchPayConfig().then((cfg) => {
-  const price = cfg.price || '500';
+  const price = cfg.price || '300';
   document.querySelectorAll('#pay-btn, .price-card.featured .btn').forEach((el) => {
     if (el.id === 'pay-btn' && el.type === 'submit') {
       el.textContent = `Продолжить — ${price} ₽`;
