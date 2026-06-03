@@ -566,6 +566,35 @@ details p {
   margin-top: 8px;
 }
 
+.pay-paused {
+  text-align: center;
+  padding: 28px 24px;
+  border-radius: var(--radius);
+  background: rgba(139, 92, 246, 0.08);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+}
+
+.pay-paused-title {
+  margin: 0 0 12px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.pay-paused-text {
+  margin: 0 0 10px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.pay-paused-text a { color: var(--accent-2); }
+
+.pay-form.hidden,
+.pay-note.hidden,
+.pay-paused.hidden {
+  display: none !important;
+}
+
 .pay-consent {
   display: flex;
   align-items: flex-start;

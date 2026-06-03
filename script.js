@@ -4,10 +4,19 @@ function meta(name) {
   return (document.querySelector(`meta[name="${name}"]`)?.content || '').trim();
 }
 
+function paymentsEnabledFromMeta() {
+  return meta('sellerlink-payments-enabled') !== 'false';
+}
+
 function staticPayConfig() {
   const telegram = meta('sellerlink-telegram').replace(/^@/, '');
+  const enabled = paymentsEnabledFromMeta();
   return {
     ok: true,
+    paymentsEnabled: enabled,
+    paymentsMessage: enabled
+      ? ''
+      : 'Оплата пока недоступна. Подключаем онлайн-кассу.',
     price: meta('sellerlink-price') || '300',
     currency: 'RUB',
     sbp: {
@@ -85,6 +94,28 @@ const paySbpLink = document.getElementById('pay-sbp-link');
 const payTelegramLink = document.getElementById('pay-telegram-link');
 const payPriceLabel = document.getElementById('pay-price-label');
 const payCopyId = document.getElementById('pay-copy-id');
+const payPaused = document.getElementById('pay-paused');
+const payNote = document.getElementById('pay-note');
+
+function setPaymentsUi(enabled) {
+  if (payPaused) payPaused.classList.toggle('hidden', enabled);
+  if (payForm) {
+    payForm.classList.toggle('hidden', !enabled);
+    payForm.hidden = !enabled;
+  }
+  if (payNote) payNote.classList.toggle('hidden', !enabled);
+  document.querySelectorAll('.price-card.featured .btn').forEach((el) => {
+    if (!enabled) {
+      el.classList.add('btn-ghost');
+      el.textContent = 'Оплата скоро';
+    } else {
+      el.classList.remove('btn-ghost');
+      el.textContent = 'Купить Pro';
+    }
+  });
+}
+
+setPaymentsUi(paymentsEnabledFromMeta());
 
 let currentOrderId = null;
 
@@ -197,6 +228,10 @@ if (payForm) {
 }
 
 fetchPayConfig().then((cfg) => {
+  const enabled = cfg.paymentsEnabled !== false;
+  setPaymentsUi(enabled);
+  if (!enabled) return;
+
   const price = cfg.price || '300';
   document.querySelectorAll('#pay-btn, .price-card.featured .btn').forEach((el) => {
     if (el.id === 'pay-btn' && el.type === 'submit') {

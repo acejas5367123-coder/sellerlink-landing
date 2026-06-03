@@ -12,6 +12,7 @@
   <meta name="sellerlink-sbp-url" content="https://www.tinkoff.ru/rm/r_tnoOPvKwhN.XqBabIgvqc/DCJKj50031" />
   <meta name="sellerlink-sbp-phone" content="+79965495016" />
   <meta name="sellerlink-sbp-recipient" content="Ольга С." />
+  <meta name="sellerlink-payments-enabled" content="false" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="favicon.svg" />
   <meta name="theme-color" content="#6366f1" />
@@ -153,7 +154,7 @@
               <li>Автоочистка в буфере</li>
               <li>Обновления программы</li>
             </ul>
-            <a class="btn" href="#buy">Купить Pro</a>
+            <a class="btn btn-ghost" href="#buy">Купить Pro</a>
           </article>
           <article class="price-card">
             <h3>После trial</h3>
@@ -172,9 +173,13 @@
     <section id="buy" class="section container narrow">
       <div class="buy-box">
         <h2>Купить Pro</h2>
-        <p class="pay-lead">Укажите email — пришлём ключ для программы. Оплата СБП, подтверждение в Telegram (кнопка «Отправить чек»).</p>
+        <div id="pay-paused" class="pay-paused">
+          <p class="pay-paused-title">Оплата пока недоступна</p>
+          <p class="pay-paused-text">Подключаем онлайн-кассу. Как будет готово — снова откроем приём платежей на сайте.</p>
+          <p class="pay-paused-text">Срочно нужен Pro? Напишите на <a href="mailto:acejas536712@mail.ru">acejas536712@mail.ru</a> или в <a href="https://t.me/seller_link_bot" target="_blank" rel="noopener">Telegram</a>.</p>
+        </div>
 
-        <form id="pay-form" class="pay-form">
+        <form id="pay-form" class="pay-form hidden" hidden>
           <label class="pay-label" for="pay-email">Email (на него уйдёт ключ)</label>
           <input id="pay-email" class="pay-input" type="email" required placeholder="you@mail.ru" autocomplete="email" />
 
@@ -216,7 +221,7 @@
           <p id="pay-message" class="pay-message" aria-live="polite"></p>
         </form>
 
-        <p class="pay-note">Оплата картой пока не подключена. Напишите на почту, если нужна.</p>
+        <p class="pay-note hidden" id="pay-note">Оплата картой пока не подключена. Напишите на почту, если нужна.</p>
       </div>
     </section>
 
