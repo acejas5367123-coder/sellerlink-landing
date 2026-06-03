@@ -1,251 +1,246 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SellerLink — чистые ссылки для селлеров WB, Ozon, Яндекс.Маркет</title>
-  <meta name="description" content="Личный кабинет, Telegram-бот и программа для Windows — чистые ссылки маркетплейсов без UTM. Один аккаунт, один лимит." />
-  <meta name="sellerlink-api" content="https://sellerlink.lucaink.ru" />
-  <meta name="sellerlink-cabinet" content="https://sellerlink.lucaink.ru/app" />
-  <meta name="sellerlink-price" content="300" />
-  <meta name="sellerlink-telegram" content="seller_link_bot" />
-  <meta name="sellerlink-sbp-url" content="https://www.tinkoff.ru/rm/r_tnoOPvKwhN.XqBabIgvqc/DCJKj50031" />
-  <meta name="sellerlink-sbp-phone" content="+79965495016" />
-  <meta name="sellerlink-sbp-recipient" content="Ольга С." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <header class="site-header">
-    <div class="container header-row">
-      <a class="logo" href="#">
-        <span class="logo-mark" aria-hidden="true"></span>
-        <span>SellerLink</span>
-      </a>
-      <nav class="nav-links">
-        <a href="#platforms">Где работать</a>
-        <a href="#features">Возможности</a>
-        <a href="#pricing">Цена</a>
-        <a href="https://sellerlink.lucaink.ru/app">Кабинет</a>
-        <a href="#faq">FAQ</a>
-      </nav>
-      <a class="btn btn-small" href="https://sellerlink.lucaink.ru/app">Войти в кабинет</a>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero container">
-      <div class="hero-grid">
-        <div>
-          <span class="eyebrow">Кабинет · Telegram · Windows</span>
-          <h1>Чистые ссылки<br />везде, где вам удобно</h1>
-          <p class="lead">
-            Один аккаунт SellerLink: личный кабинет в браузере, бот в Telegram с кнопками
-            и программа для Windows с hotkey. Лимит бесплатных ссылок общий — 10 штук.
-          </p>
-          <div class="hero-cta">
-            <a class="btn" href="https://sellerlink.lucaink.ru/app">Личный кабинет</a>
-            <a class="btn btn-ghost" href="https://t.me/seller_link_bot" target="_blank" rel="noopener">Telegram-бот</a>
-            <a class="btn btn-ghost" href="https://github.com/acejas5367123-coder/sellerlink-releases/releases/latest" target="_blank" rel="noopener">Windows</a>
-          </div>
-          <p class="hero-kbd">В боте — кнопки и ссылка в чат · в кабинете — вставка списка · в Windows: <kbd>Ctrl + Shift + U</kbd></p>
-        </div>
-        <div class="hero-card">
-          <div class="demo-row bad">
-            <span class="demo-label">Было</span>
-            <code>wildberries.ru/catalog/12345678/detail.aspx?utm_source=telegram&yclid=abc…</code>
-          </div>
-          <div class="demo-arrow">↓</div>
-          <div class="demo-row good">
-            <span class="demo-label">Стало</span>
-            <code>12345678</code>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="platforms" class="section container">
-      <h2>Три способа работать</h2>
-      <p class="section-intro">Выберите удобный канал — данные и лимит синхронизируются после привязки Telegram в кабинете.</p>
-      <div class="platforms-grid">
-        <article class="platform-card featured">
-          <span class="platform-badge">Новое</span>
-          <div class="platform-icon">🌐</div>
-          <h3>Личный кабинет</h3>
-          <p>Вход по email. Очистка ссылок в браузере, история, активация Pro, код для привязки Telegram.</p>
-          <a class="btn" href="https://sellerlink.lucaink.ru/app">Открыть кабинет</a>
-        </article>
-        <article class="platform-card">
-          <div class="platform-icon">✈</div>
-          <h3>Telegram-бот</h3>
-          <p>Кнопки вместо команд: пришлите ссылку — получите артикул. Оплата Pro и чек — тоже кнопками.</p>
-          <a class="btn btn-ghost" href="https://t.me/seller_link_bot" target="_blank" rel="noopener">@seller_link_bot</a>
-        </article>
-        <article class="platform-card">
-          <div class="platform-icon">💻</div>
-          <h3>Windows</h3>
-          <p>Tray, горячая клавиша, пакеты, маппер SKU, автоочистка Pro, экспорт в Excel.</p>
-          <a class="btn btn-ghost" href="https://github.com/acejas5367123-coder/sellerlink-releases/releases/latest" target="_blank" rel="noopener">Скачать .exe</a>
-        </article>
-      </div>
-    </section>
-
-    <section id="features" class="section container">
-      <h2>Всё, что нужно селлеру</h2>
-      <p class="section-intro">Pro снимает лимиты и открывает автоочистку в программе.</p>
-      <div class="features-grid">
-        <article class="feature-card">
-          <div class="feature-icon" aria-hidden="true">⌨</div>
-          <h3>Tray + hotkey</h3>
-          <p>Работает поверх Excel, браузера и аналитики. Скопировал — нажал — вставил.</p>
-        </article>
-        <article class="feature-card">
-          <div class="feature-icon" aria-hidden="true">☰</div>
-          <h3>Массовая обработка</h3>
-          <p>Сотни ссылок списком в кабинете или программе, удаление дубликатов.</p>
-        </article>
-        <article class="feature-card">
-          <div class="feature-icon" aria-hidden="true">⚡</div>
-          <h3>Автоочистка Pro</h3>
-          <p>В Windows: копируете ссылку — SellerLink подменяет её в буфере на чистую.</p>
-        </article>
-        <article class="feature-card">
-          <div class="feature-icon" aria-hidden="true">📊</div>
-          <h3>История</h3>
-          <p>В кабинете — последние ссылки. В программе — экспорт дня в TSV.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section container narrow">
-      <h2>Как связать всё в один аккаунт</h2>
-      <ol class="steps-list">
-        <li>Откройте <a href="https://sellerlink.lucaink.ru/app">личный кабинет</a> и войдите по email.</li>
-        <li>В кабинете нажмите «Получить код» для Telegram.</li>
-        <li>В боте — кнопка «🔗 Привязать кабинет» и введите код.</li>
-        <li>Pro-ключ из письма активируйте в кабинете или в настройках Windows.</li>
-      </ol>
-    </section>
-
-    <section id="pricing" class="section pricing-section">
-      <div class="container">
-        <h2 style="text-align:center;margin-bottom:40px">Простая цена</h2>
-        <div class="pricing-grid">
-          <article class="price-card">
-            <h3>Пробный период</h3>
-            <div class="price">0 ₽</div>
-            <p>3 дня, все Pro-функции в Windows</p>
-            <ul>
-              <li>Автоочистка</li>
-              <li>Массовая обработка</li>
-              <li>Кабинет + бот</li>
-            </ul>
-            <a class="btn btn-ghost" href="https://github.com/acejas5367123-coder/sellerlink-releases/releases/latest" target="_blank" rel="noopener">Скачать .exe</a>
-          </article>
-          <article class="price-card featured">
-            <span class="popular">Рекомендуем</span>
-            <h3>Pro навсегда</h3>
-            <div class="price">300 ₽</div>
-            <p>Разовая оплата, без подписки</p>
-            <ul>
-              <li>Безлимит ссылок</li>
-              <li>Автоочистка при копировании</li>
-              <li>Кабинет + бот + Windows</li>
-            </ul>
-            <a class="btn" href="#buy">Купить Pro — СБП</a>
-          </article>
-          <article class="price-card">
-            <h3>Free</h3>
-            <div class="price">0 ₽</div>
-            <p>После пробного периода</p>
-            <ul>
-              <li>10 ссылок (общий лимит)</li>
-              <li>Кабинет и бот</li>
-              <li>1 ссылка за раз в Windows</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="buy" class="section container narrow">
-      <div class="buy-box">
-        <h2>Купить Pro</h2>
-        <p class="pay-lead">СБП → подтверждение в боте кнопкой «📎 Отправить чек» → ключ на почту и в кабинет.</p>
-
-        <form id="pay-form" class="pay-form">
-          <label class="pay-label" for="pay-email">Email для ключа Pro</label>
-          <input id="pay-email" class="pay-input" type="email" required placeholder="you@mail.ru" autocomplete="email" />
-
-          <div id="pay-steps" class="pay-steps hidden">
-            <div class="pay-step">
-              <span class="pay-step-num">1</span>
-              <div>
-                <strong>Оплатите <span id="pay-price-label">300</span> ₽ по СБП</strong>
-                <p id="pay-sbp-hint" class="pay-hint"></p>
-                <div class="pay-step-actions">
-                  <a id="pay-sbp-link" class="btn btn-small hidden" href="https://www.tinkoff.ru/rm/r_tnoOPvKwhN.XqBabIgvqc/DCJKj50031" target="_blank" rel="noopener noreferrer">Открыть оплату СБП</a>
-                  <button type="button" id="pay-copy-id" class="btn btn-ghost btn-small hidden">Скопировать ID заявки</button>
-                </div>
-              </div>
-            </div>
-            <div class="pay-step">
-              <span class="pay-step-num">2</span>
-              <div>
-                <strong>В Telegram нажмите «📎 Отправить чек»</strong>
-                <p class="pay-hint">Или откройте бота — кнопки внизу экрана</p>
-                <a id="pay-telegram-link" class="btn btn-small" href="https://t.me/seller_link_bot?start=buy" target="_blank" rel="noopener noreferrer">Открыть бота</a>
-              </div>
-            </div>
-            <div class="pay-step">
-              <span class="pay-step-num">3</span>
-              <div>
-                <strong>Ключ на email и в кабинете</strong>
-                <p class="pay-hint">Активируйте Pro в <a href="https://sellerlink.lucaink.ru/app">личном кабинете</a> или в Windows</p>
-              </div>
-            </div>
-          </div>
-
-          <button id="pay-btn" class="btn pay-btn" type="submit">Продолжить — 300 ₽</button>
-          <p id="pay-message" class="pay-message" aria-live="polite"></p>
-        </form>
-
-        <p class="pay-note">Нужна оплата картой через ЮKassa? Напишите в поддержку — подключим позже.</p>
-      </div>
-    </section>
-
-    <section id="faq" class="section container narrow">
-      <h2>FAQ</h2>
-      <div class="faq-list">
-        <details>
-          <summary>Зачем личный кабинет, если есть бот?</summary>
-          <p>Кабинет удобен с компьютера: списки ссылок, история, Pro-ключ. Бот — с телефона, всё на кнопках. Лимит один на оба канала.</p>
-        </details>
-        <details>
-          <summary>Telegram, кабинет или программа?</summary>
-          <p>Кабинет и бот — до 10 ссылок бесплатно. Windows — hotkey и пакеты; Pro снимает лимиты и даёт автоочистку.</p>
-        </details>
-        <details>
-          <summary>Нужен интернет в программе?</summary>
-          <p>Очистка ссылок в Windows работает офлайн. Кабинет и бот — онлайн.</p>
-        </details>
-        <details>
-          <summary>Как получить ключ после оплаты?</summary>
-          <p>Оплатите СБП, в боте нажмите «📎 Отправить чек». Ключ придёт на почту — активируйте в кабинете или в настройках Windows.</p>
-        </details>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-row">
-      <span>SellerLink · Кабинет · Telegram · Windows 10/11</span>
-      <span><a href="mailto:acejas536712@mail.ru">acejas536712@mail.ru</a> · Самозанятый Савельев Д.В</span>
-    </div>
-  </footer>
-  <script src="script.js"></script>
-</body>
-</html>
-
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SellerLink — убирает мусор из ссылок WB, Ozon и Яндекс.Маркет</title>
+  <meta name="description" content="Программа для Windows: чистая ссылка или артикул из буфера за секунду. Есть бесплатный Telegram-бот." />
+  <meta name="sellerlink-api" content="https://sellerlink.lucaink.ru" />
+  <meta name="sellerlink-cabinet" content="https://sellerlink.lucaink.ru/app" />
+  <meta name="sellerlink-price" content="300" />
+  <meta name="sellerlink-telegram" content="seller_link_bot" />
+  <meta name="sellerlink-sbp-url" content="https://www.tinkoff.ru/rm/r_tnoOPvKwhN.XqBabIgvqc/DCJKj50031" />
+  <meta name="sellerlink-sbp-phone" content="+79965495016" />
+  <meta name="sellerlink-sbp-recipient" content="Ольга С." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="logo" href="#">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span>SellerLink</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#what">Что это</a>
+        <a href="#features">Функции</a>
+        <a href="#pricing">Цена</a>
+        <a href="#faq">Вопросы</a>
+      </nav>
+      <a class="btn btn-small" href="https://github.com/acejas5367123-coder/sellerlink-releases/releases/latest" target="_blank" rel="noopener">Скачать</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">Программа для Windows · WB, Ozon, Яндекс.Маркет</span>
+          <h1>Копируете грязную ссылку —<br />вставляете чистую</h1>
+          <p class="lead">
+            SellerLink — маленькая утилита в трее. Снимает UTM и рекламный хвост,
+            оставляет нормальный URL или артикул. Работаете в Excel и в чатах с поставщиками,
+            не ковыряете ссылку руками.
+          </p>
+          <div class="hero-cta">
+            <a class="btn" href="https://github.com/acejas5367123-coder/sellerlink-releases/releases/latest" target="_blank" rel="noopener">Скачать для Windows</a>
+            <a class="btn btn-ghost" href="https://t.me/seller_link_bot" target="_blank" rel="noopener">Бот в Telegram</a>
+          </div>
+          <p class="hero-kbd">Горячая клавиша <kbd>Ctrl + Shift + U</kbd> · 3 дня Pro бесплатно после установки</p>
+        </div>
+        <div class="hero-card">
+          <div class="demo-row bad">
+            <span class="demo-label">Было</span>
+            <code>wildberries.ru/catalog/12345678/detail.aspx?utm_source=telegram&yclid=abc…</code>
+          </div>
+          <div class="demo-arrow">↓</div>
+          <div class="demo-row good">
+            <span class="demo-label">Стало</span>
+            <code>12345678</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="what" class="section container narrow">
+      <h2>Что вы получаете</h2>
+      <p class="section-intro">
+        Платный продукт — <strong>приложение под Windows</strong> (файл .exe, ставится как обычная программа).
+        Pro стоит 300 ₽ один раз, без подписки. Telegram-бот и сайт — бесплатные дополнения,
+        если не хотите ставить программу или нужно с телефона.
+      </p>
+    </section>
+
+    <section id="features" class="section container">
+      <h2>Что умеет программа</h2>
+      <div class="features-grid">
+        <article class="feature-card">
+          <div class="feature-icon" aria-hidden="true">⌨</div>
+          <h3>Горячая клавиша</h3>
+          <p>Скопировали ссылку из браузера или рекламного кабинета — нажали сочетание — в буфере уже чистый вариант.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon" aria-hidden="true">☰</div>
+          <h3>Пачка ссылок</h3>
+          <p>Вставили столбец из Excel — получили список артикулов без дублей. Экспорт обратно в таблицу.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon" aria-hidden="true">⚡</div>
+          <h3>Автоочистка (Pro)</h3>
+          <p>Не нужно каждый раз жать клавиши: скопировали — программа сама подменила ссылку в буфере.</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon" aria-hidden="true">⇄</div>
+          <h3>Артикул ↔ ссылки</h3>
+          <p>Ввели номер — собрали ссылки на WB, Ozon и Я.Маркет. Или наоборот, вытащили ID из длинного URL.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="platforms" class="section container">
+      <h2>Если без установки</h2>
+      <p class="section-intro">Основная работа всё равно в Windows. Но пару ссылок можно обработать так:</p>
+      <div class="platforms-grid">
+        <article class="platform-card">
+          <div class="platform-icon">✈</div>
+          <h3>Telegram-бот</h3>
+          <p>Кинули ссылку в чат — бот ответил артикулом. Бесплатно, до 10 штук. Удобно с телефона.</p>
+          <a class="btn btn-ghost" href="https://t.me/seller_link_bot" target="_blank" rel="noopener">Открыть бота</a>
+        </article>
+        <article class="platform-card">
+          <div class="platform-icon">🌐</div>
+          <h3>Сайт</h3>
+          <p>Тот же разбор ссылок в браузере. Вход по email, если нужно с другого компьютера.</p>
+          <a class="btn btn-ghost" href="https://sellerlink.lucaink.ru/app">Открыть на сайте</a>
+        </article>
+        <article class="platform-card featured">
+          <div class="platform-icon">💻</div>
+          <h3>Windows — основной вариант</h3>
+          <p>Tray, пакеты, история, Pro. С этим и приходят большинство.</p>
+          <a class="btn" href="https://github.com/acejas5367123-coder/sellerlink-releases/releases/latest" target="_blank" rel="noopener">Скачать .exe</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="pricing" class="section pricing-section">
+      <div class="container">
+        <h2 style="text-align:center;margin-bottom:40px">Сколько стоит</h2>
+        <div class="pricing-grid">
+          <article class="price-card">
+            <h3>Попробовать</h3>
+            <div class="price">0 ₽</div>
+            <p>3 дня все функции Pro в программе</p>
+            <ul>
+              <li>Автоочистка</li>
+              <li>Пакетная обработка</li>
+              <li>Без карты</li>
+            </ul>
+            <a class="btn btn-ghost" href="https://github.com/acejas5367123-coder/sellerlink-releases/releases/latest" target="_blank" rel="noopener">Скачать .exe</a>
+          </article>
+          <article class="price-card featured">
+            <span class="popular">За это платят</span>
+            <h3>Pro навсегда</h3>
+            <div class="price">300 ₽</div>
+            <p>Один перевод по СБП, ключ на почту</p>
+            <ul>
+              <li>Без лимита ссылок</li>
+              <li>Автоочистка в буфере</li>
+              <li>Обновления программы</li>
+            </ul>
+            <a class="btn" href="#buy">Купить Pro</a>
+          </article>
+          <article class="price-card">
+            <h3>После trial</h3>
+            <div class="price">0 ₽</div>
+            <p>Базовая версия остаётся</p>
+            <ul>
+              <li>Одна ссылка за раз</li>
+              <li>Горячая клавиша</li>
+              <li>Бот — до 10 ссылок</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="buy" class="section container narrow">
+      <div class="buy-box">
+        <h2>Купить Pro</h2>
+        <p class="pay-lead">Укажите email — пришлём ключ для программы. Оплата СБП, подтверждение в Telegram (кнопка «Отправить чек»).</p>
+
+        <form id="pay-form" class="pay-form">
+          <label class="pay-label" for="pay-email">Email (на него уйдёт ключ)</label>
+          <input id="pay-email" class="pay-input" type="email" required placeholder="you@mail.ru" autocomplete="email" />
+
+          <div id="pay-steps" class="pay-steps hidden">
+            <div class="pay-step">
+              <span class="pay-step-num">1</span>
+              <div>
+                <strong>Переведите <span id="pay-price-label">300</span> ₽ по СБП</strong>
+                <p id="pay-sbp-hint" class="pay-hint"></p>
+                <div class="pay-step-actions">
+                  <a id="pay-sbp-link" class="btn btn-small hidden" href="https://www.tinkoff.ru/rm/r_tnoOPvKwhN.XqBabIgvqc/DCJKj50031" target="_blank" rel="noopener noreferrer">Открыть СБП</a>
+                  <button type="button" id="pay-copy-id" class="btn btn-ghost btn-small hidden">Скопировать номер заявки</button>
+                </div>
+              </div>
+            </div>
+            <div class="pay-step">
+              <span class="pay-step-num">2</span>
+              <div>
+                <strong>Скиньте скрин чека в бота</strong>
+                <p class="pay-hint">Кнопка внизу в чате — «Отправить чек»</p>
+                <a id="pay-telegram-link" class="btn btn-small" href="https://t.me/seller_link_bot?start=buy" target="_blank" rel="noopener noreferrer">Открыть Telegram</a>
+              </div>
+            </div>
+            <div class="pay-step">
+              <span class="pay-step-num">3</span>
+              <div>
+                <strong>Введите ключ в программе</strong>
+                <p class="pay-hint">Настройки → Лицензия Pro. Письмо может попасть в спам.</p>
+              </div>
+            </div>
+          </div>
+
+          <button id="pay-btn" class="btn pay-btn" type="submit">Продолжить — 300 ₽</button>
+          <p id="pay-message" class="pay-message" aria-live="polite"></p>
+        </form>
+
+        <p class="pay-note">Оплата картой пока не подключена. Напишите на почту, если нужна.</p>
+      </div>
+    </section>
+
+    <section id="faq" class="section container narrow">
+      <h2>Вопросы</h2>
+      <div class="faq-list">
+        <details>
+          <summary>Это облачный сервис?</summary>
+          <p>Нет. Программа крутится у вас на компьютере, ссылки никуда не заливаются. Бот и сайт — по желанию, через интернет.</p>
+        </details>
+        <details>
+          <summary>Чем бот отличается от программы?</summary>
+          <p>Бот — чтобы быстро глянуть одну-две ссылки с телефона. Программа — для ежедневной работы: hotkey, пачки, автоочистка.</p>
+        </details>
+        <details>
+          <summary>Интернет нужен?</summary>
+          <p>Для Windows-программы — нет, чистка офлайн. Для бота и сайта — да.</p>
+        </details>
+        <details>
+          <summary>Как активировать Pro?</summary>
+          <p>После оплаты ключ придёт на email. Вставьте его в настройках программы вместе с тем же email. На сайте тоже можно, если удобнее.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <span>SellerLink · утилита для селлеров · Windows 10/11</span>
+      <span><a href="mailto:acejas536712@mail.ru">acejas536712@mail.ru</a> · Самозанятый Савельев Д.В</span>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
