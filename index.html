@@ -15,10 +15,10 @@
   <meta name="sellerlink-payments-enabled" content="false" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="favicon.svg" />
-  <meta name="theme-color" content="#6366f1" />
+  <meta name="theme-color" content="#020308" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -28,11 +28,15 @@
         <img class="logo-img" src="favicon.svg" width="38" height="38" alt="" />
         <span>SellerLink</span>
       </a>
-      <nav class="nav-links">
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Меню">
+        <span class="nav-toggle-icon"></span>
+      </button>
+      <nav class="nav-links" id="nav-menu">
         <a href="#scenes">Зачем</a>
         <a href="#features">Функции</a>
         <a href="#pricing">Цена</a>
         <a href="#faq">Вопросы</a>
+        <a href="https://sellerlink.lucaink.ru/app">Кабинет</a>
       </nav>
       <a class="btn btn-small" href="https://github.com/acejas5367123-coder/sellerlink-releases/releases/latest" target="_blank" rel="noopener">Скачать</a>
     </div>

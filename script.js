@@ -300,3 +300,20 @@ if (demoCopyBtn && demoAfterText) {
     }
   });
 }
+
+const navToggle = document.getElementById('nav-toggle');
+const siteHeader = document.querySelector('.site-header');
+const navMenu = document.getElementById('nav-menu');
+
+if (navToggle && siteHeader && navMenu) {
+  navToggle.addEventListener('click', () => {
+    const open = siteHeader.classList.toggle('nav-open');
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  navMenu.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      siteHeader.classList.remove('nav-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
