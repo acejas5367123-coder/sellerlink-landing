@@ -227,6 +227,36 @@ if (payForm) {
   });
 }
 
+const demoCleanBtn = document.getElementById('demo-clean-btn');
+const demoCard = document.getElementById('demo-card');
+const demoCopyBtn = document.getElementById('demo-copy-btn');
+const demoAfterText = document.getElementById('demo-after-text');
+const CLEAN_RESULT = '12345678';
+
+if (demoCleanBtn && demoCard) {
+  demoCleanBtn.addEventListener('click', () => {
+    demoCard.classList.add('demo-done');
+    if (demoAfterText) demoAfterText.textContent = CLEAN_RESULT;
+    if (demoCopyBtn) demoCopyBtn.classList.remove('hidden');
+    demoCleanBtn.textContent = '✓ Готово';
+    demoCleanBtn.disabled = true;
+  });
+}
+
+if (demoCopyBtn) {
+  demoCopyBtn.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(CLEAN_RESULT);
+      demoCopyBtn.textContent = 'Скопировано!';
+      setTimeout(() => {
+        demoCopyBtn.textContent = 'Скопировать';
+      }, 2000);
+    } catch {
+      demoCopyBtn.textContent = CLEAN_RESULT;
+    }
+  });
+}
+
 fetchPayConfig().then((cfg) => {
   const enabled = cfg.paymentsEnabled !== false;
   setPaymentsUi(enabled);
@@ -240,3 +270,33 @@ fetchPayConfig().then((cfg) => {
   });
   applyPayLinks({ sbp: cfg.sbp, telegramUrl: null }, cfg);
 });
+
+/* Hero demo */
+const demoBtn = document.getElementById('demo-clean-btn');
+const demoCard = document.getElementById('demo-card');
+const demoAfterText = document.getElementById('demo-after-text');
+const demoCopyBtn = document.getElementById('demo-copy-btn');
+const DEMO_RESULT = '12345678';
+
+if (demoBtn && demoCard) {
+  demoBtn.addEventListener('click', () => {
+    demoCard.classList.add('demo-done');
+    demoBtn.textContent = '✓ Готово';
+    demoBtn.disabled = true;
+    if (demoCopyBtn) demoCopyBtn.classList.remove('hidden');
+  });
+}
+
+if (demoCopyBtn && demoAfterText) {
+  demoCopyBtn.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(DEMO_RESULT);
+      demoCopyBtn.textContent = 'Скопировано!';
+      setTimeout(() => {
+        demoCopyBtn.textContent = 'Скопировать';
+      }, 2000);
+    } catch {
+      demoCopyBtn.textContent = DEMO_RESULT;
+    }
+  });
+}
