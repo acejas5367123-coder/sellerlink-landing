@@ -6,6 +6,12 @@
   <title>SellerLink — чистые ссылки для селлеров WB, Ozon, Яндекс.Маркет</title>
   <meta name="description" content="Tray-утилита для Windows: убирает UTM из ссылок маркетплейсов одной горячей клавишей." />
   <meta name="sellerlink-api" content="" />
+  <!-- СБП / Telegram (для GitHub Pages без бэкенда) -->
+  <meta name="sellerlink-price" content="500" />
+  <meta name="sellerlink-telegram" content="SellerLinkBot" />
+  <meta name="sellerlink-sbp-url" content="" />
+  <meta name="sellerlink-sbp-phone" content="" />
+  <meta name="sellerlink-sbp-recipient" content="" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -136,7 +142,7 @@
               <li>Автоочистка при копировании</li>
               <li>Обновления 2026 года</li>
             </ul>
-            <a class="btn" href="#buy">Купить через ЮKassa</a>
+            <a class="btn" href="#buy">Купить Pro — СБП</a>
           </article>
           <article class="price-card">
             <h3>Free</h3>
@@ -154,17 +160,47 @@
 
     <section id="buy" class="section container narrow">
       <div class="buy-box">
-        <h2>Оплата через ЮKassa</h2>
-        <p>Карта, СБП, Apple Pay / Google Pay. После оплаты ключ приходит на email автоматически.</p>
+        <h2>Купить Pro — СБП + Telegram</h2>
+        <p class="pay-lead">Без ожидания подключения эквайринга: перевод по СБП, подтверждение в боте, ключ на email за несколько минут.</p>
 
         <form id="pay-form" class="pay-form">
           <label class="pay-label" for="pay-email">Email для ключа Pro</label>
           <input id="pay-email" class="pay-input" type="email" required placeholder="you@mail.ru" autocomplete="email" />
-          <button id="pay-btn" class="btn pay-btn" type="submit">Оплатить 500 ₽</button>
+
+          <div id="pay-steps" class="pay-steps hidden">
+            <div class="pay-step">
+              <span class="pay-step-num">1</span>
+              <div>
+                <strong>Оплатите <span id="pay-price-label">500</span> ₽ по СБП</strong>
+                <p id="pay-sbp-hint" class="pay-hint"></p>
+                <div class="pay-step-actions">
+                  <a id="pay-sbp-link" class="btn btn-small hidden" href="#" target="_blank" rel="noopener">Открыть оплату СБП</a>
+                  <button type="button" id="pay-copy-id" class="btn btn-ghost btn-small hidden">Скопировать ID заявки</button>
+                </div>
+              </div>
+            </div>
+            <div class="pay-step">
+              <span class="pay-step-num">2</span>
+              <div>
+                <strong>Подтвердите в Telegram</strong>
+                <p class="pay-hint">Отправьте скриншот чека боту и напишите <kbd>/paid</kbd></p>
+                <a id="pay-telegram-link" class="btn btn-small" href="#" target="_blank" rel="noopener">Открыть Telegram</a>
+              </div>
+            </div>
+            <div class="pay-step">
+              <span class="pay-step-num">3</span>
+              <div>
+                <strong>Получите ключ на email</strong>
+                <p class="pay-hint">Обычно в течение 15 минут после проверки платежа</p>
+              </div>
+            </div>
+          </div>
+
+          <button id="pay-btn" class="btn pay-btn" type="submit">Продолжить — 500 ₽</button>
           <p id="pay-message" class="pay-message" aria-live="polite"></p>
         </form>
 
-        <p class="pay-note">Нажимая «Оплатить», вы перейдёте на защищённую страницу ЮKassa.</p>
+        <p class="pay-note">Нужна оплата картой через ЮKassa? Напишите в поддержку — подключим позже.</p>
       </div>
     </section>
 
@@ -177,7 +213,7 @@
         </details>
         <details>
           <summary>Как получить ключ после оплаты?</summary>
-          <p>На email придёт ключ формата XXXX-XXXX-XXXX-XXXX. Введите его в настройках приложения.</p>
+          <p>Оплатите по СБП, подтвердите в Telegram-боте (скриншот + /paid). На email придёт ключ XXXX-XXXX-XXXX-XXXX — введите в Настройках приложения.</p>
         </details>
         <details>
           <summary>Free и Pro — в чём разница?</summary>

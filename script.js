@@ -1,5 +1,65 @@
 const API_BASE = (document.querySelector('meta[name="sellerlink-api"]')?.content || '').replace(/\/+$/, '');
 
+function meta(name) {
+  return (document.querySelector(`meta[name="${name}"]`)?.content || '').trim();
+}
+
+function staticPayConfig() {
+  const telegram = meta('sellerlink-telegram').replace(/^@/, '');
+  return {
+    ok: true,
+    price: meta('sellerlink-price') || '500',
+    currency: 'RUB',
+    sbp: {
+      url: meta('sellerlink-sbp-url') || null,
+      phone: meta('sellerlink-sbp-phone') || null,
+      recipient: meta('sellerlink-sbp-recipient') || null,
+    },
+    telegram: {
+      username: telegram || null,
+      url: telegram ? `https://t.me/${telegram}` : null,
+    },
+    yookassa: false,
+  };
+}
+
+async function fetchPayConfig() {
+  if (API_BASE) {
+    try {
+      const res = await fetch(`${API_BASE}/api/pay/config`);
+      if (res.ok) return res.json();
+    } catch {}
+  }
+  return staticPayConfig();
+}
+
+async function createPayIntent(email) {
+  if (API_BASE) {
+    const res = await fetch(`${API_BASE}/api/pay/intent`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email }),
+    });
+    const data = await res.json();
+    if (!res.ok || !data.ok) throw new Error(data.error || 'Не удалось создать заявку');
+    return data;
+  }
+
+  const cfg = staticPayConfig();
+  const telegram = cfg.telegram?.username;
+  if (!telegram) throw new Error('Укажите sellerlink-telegram в meta лендинга или подключите API');
+
+  return {
+    ok: true,
+    orderId: null,
+    email,
+    price: cfg.price,
+    sbp: cfg.sbp,
+    telegramUrl: `https://t.me/${telegram}?start=buy`,
+    localOnly: true,
+  };
+}
+
 document.querySelectorAll('a[href^="#"]').forEach((link) => {
   link.addEventListener('click', (event) => {
     const id = link.getAttribute('href');
@@ -15,6 +75,14 @@ const payForm = document.getElementById('pay-form');
 const payEmail = document.getElementById('pay-email');
 const payBtn = document.getElementById('pay-btn');
 const payMessage = document.getElementById('pay-message');
+const paySteps = document.getElementById('pay-steps');
+const paySbpHint = document.getElementById('pay-sbp-hint');
+const paySbpLink = document.getElementById('pay-sbp-link');
+const payTelegramLink = document.getElementById('pay-telegram-link');
+const payPriceLabel = document.getElementById('pay-price-label');
+const payCopyId = document.getElementById('pay-copy-id');
+
+let currentOrderId = null;
 
 function setPayMessage(text, type = '') {
   if (!payMessage) return;
@@ -22,36 +90,96 @@ function setPayMessage(text, type = '') {
   payMessage.className = `pay-message ${type}`.trim();
 }
 
+function showPaySteps(intent, cfg) {
+  if (!paySteps) return;
+  paySteps.classList.remove('hidden');
+  currentOrderId = intent.orderId;
+
+  const price = intent.price || cfg.price || '500';
+  if (payPriceLabel) payPriceLabel.textContent = price;
+  if (payBtn) payBtn.textContent = 'Готово — жду ключ на email';
+
+  const sbpParts = [];
+  if (intent.sbp?.url || cfg.sbp?.url) {
+    const url = intent.sbp?.url || cfg.sbp?.url;
+    sbpParts.push('Перейдите по ссылке СБП или отсканируйте QR в приложении банка.');
+    if (paySbpLink) {
+      paySbpLink.href = url;
+      paySbpLink.classList.remove('hidden');
+    }
+  } else {
+    paySbpLink?.classList.add('hidden');
+  }
+
+  const phone = intent.sbp?.phone || cfg.sbp?.phone;
+  const recipient = intent.sbp?.recipient || cfg.sbp?.recipient;
+  if (phone) sbpParts.push(`Телефон: ${phone}`);
+  if (recipient) sbpParts.push(`Получатель: ${recipient}`);
+  if (intent.orderId) sbpParts.push(`В комментарии к переводу: ${intent.orderId}`);
+  else sbpParts.push('В боте введите тот же email, что указали выше.');
+
+  if (paySbpHint) paySbpHint.textContent = sbpParts.join(' · ');
+
+  if (payTelegramLink && intent.telegramUrl) {
+    payTelegramLink.href = intent.telegramUrl;
+  }
+
+  if (payCopyId) {
+    if (intent.orderId) {
+      payCopyId.classList.remove('hidden');
+      payCopyId.onclick = async () => {
+        try {
+          await navigator.clipboard.writeText(intent.orderId);
+          setPayMessage('ID заявки скопирован', 'success');
+        } catch {
+          setPayMessage(intent.orderId);
+        }
+      };
+    } else {
+      payCopyId.classList.add('hidden');
+    }
+  }
+
+  setPayMessage(
+    intent.localOnly
+      ? 'В Telegram нажмите /buy и введите тот же email, затем оплатите СБП.'
+      : 'Заявка создана. Оплатите СБП и откройте Telegram.',
+    'success'
+  );
+}
+
 if (payForm) {
   payForm.addEventListener('submit', async (event) => {
     event.preventDefault();
-    const email = payEmail.value.trim();
+    const email = payEmail.value.trim().toLowerCase();
     if (!email) {
       setPayMessage('Укажите email', 'error');
       return;
     }
 
     payBtn.disabled = true;
-    payBtn.textContent = 'Создаём платёж…';
+    const cfg = await fetchPayConfig();
+    const price = cfg.price || '500';
+    payBtn.textContent = 'Создаём заявку…';
     setPayMessage('');
 
     try {
-      const response = await fetch(`${API_BASE}/api/payments/create`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
-      });
-      const data = await response.json();
-
-      if (!response.ok || !data.ok || !data.confirmationUrl) {
-        throw new Error(data.error || 'Не удалось создать платёж');
-      }
-
-      window.location.href = data.confirmationUrl;
+      const intent = await createPayIntent(email);
+      showPaySteps(intent, cfg);
+      payEmail.readOnly = true;
     } catch (error) {
-      setPayMessage(error.message || 'Ошибка оплаты', 'error');
+      setPayMessage(error.message || 'Ошибка', 'error');
       payBtn.disabled = false;
-      payBtn.textContent = 'Оплатить 500 ₽';
+      payBtn.textContent = `Продолжить — ${price} ₽`;
     }
   });
 }
+
+fetchPayConfig().then((cfg) => {
+  const price = cfg.price || '500';
+  document.querySelectorAll('#pay-btn, .price-card.featured .btn').forEach((el) => {
+    if (el.id === 'pay-btn' && el.type === 'submit') {
+      el.textContent = `Продолжить — ${price} ₽`;
+    }
+  });
+});
