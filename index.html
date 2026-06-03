@@ -207,6 +207,11 @@
             </div>
           </div>
 
+          <label class="pay-consent" for="pay-consent">
+            <input type="checkbox" id="pay-consent" name="consent" required />
+            <span>Оплачивая, принимаю <a href="offer.html" target="_blank" rel="noopener">публичную оферту</a>, <a href="privacy.html" target="_blank" rel="noopener">политику конфиденциальности</a> и <a href="refund.html" target="_blank" rel="noopener">условия возврата</a>.</span>
+          </label>
+
           <button id="pay-btn" class="btn pay-btn" type="submit">Продолжить — 300 ₽</button>
           <p id="pay-message" class="pay-message" aria-live="polite"></p>
         </form>
@@ -238,10 +243,33 @@
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-row">
-      <span>SellerLink · утилита для селлеров · Windows 10/11</span>
-      <span><a href="mailto:acejas536712@mail.ru">acejas536712@mail.ru</a> · Самозанятый Савельев Д.В</span>
+  <footer class="site-footer" id="contacts">
+    <div class="container footer-grid">
+      <div class="footer-block">
+        <strong>SellerLink</strong>
+        <p>Утилита для селлеров · Windows 10/11<br />Лицензия Pro — 300 ₽, разово</p>
+        <p class="footer-legal-links">
+          <a href="offer.html">Оферта</a>
+          <a href="privacy.html">Конфиденциальность</a>
+          <a href="refund.html">Возврат</a>
+        </p>
+      </div>
+      <div class="footer-block">
+        <strong>Контакты</strong>
+        <p>
+          <a href="mailto:acejas536712@mail.ru">acejas536712@mail.ru</a><br />
+          <a href="https://t.me/seller_link_bot" target="_blank" rel="noopener">Telegram @seller_link_bot</a><br />
+          <a href="tel:+79965495016">+7 996 549-50-16</a>
+        </p>
+      </div>
+      <div class="footer-block">
+        <strong>Реквизиты</strong>
+        <p>
+          Самозанятый Савельев Даниил Владимирович<br />
+          ИНН 544602265280<br />
+          РФ
+        </p>
+      </div>
     </div>
   </footer>
   <script src="script.js"></script>

@@ -172,6 +172,12 @@ if (payForm) {
       return;
     }
 
+    const consent = document.getElementById('pay-consent');
+    if (consent && !consent.checked) {
+      setPayMessage('Подтвердите согласие с офертой и условиями', 'error');
+      return;
+    }
+
     payBtn.disabled = true;
     const cfg = await fetchPayConfig();
     const price = cfg.price || '300';
